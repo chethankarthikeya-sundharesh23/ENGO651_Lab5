@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ENGO 651 Lab 5 - IoT GeoWeb App</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+
+<h2>IoT GeoWeb App</h2>
+
+<h3>MQTT Connection</h3>
+
+<label>Host</label>
+<input id="host" value="test.mosquitto.org">
+
+<label>Port</label>
+<input id="port" value="8080">
+
+<div class="btnRow">
+<button id="startBtn">Start</button>
+<button id="endBtn">End</button>
+</div>
+
+<h3>Publish Message</h3>
+
+<label>Topic</label>
+<input id="topic" value="engo651/ck/my_temperature">
+
+<label>Message</label>
+<input id="message">
+
+<button id="publishBtn" class="fullBtn">Publish</button>
+
+<h3>IoT Sensor</h3>
+
+<button id="shareBtn" class="shareBtn">Share My Status</button>
+
+</div>
+
+<div id="map"></div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
