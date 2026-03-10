@@ -35,13 +35,14 @@ document.getElementById("startBtn").onclick = function(){
 
     var clientID = "client_" + Math.random().toString(16).substr(2,8);
 
-    client = new Paho.MQTT.Client(host,port,clientID);
+    client = new Paho.MQTT.Client(host, Number(port), "/mqtt", clientID);
 
     client.onConnectionLost = onConnectionLost;
     client.onMessageArrived = onMessageArrived;
 
     client.connect({
-        onSuccess:onConnect
+        onSuccess:onConnect,
+        useSSL:true
     });
 
 };
