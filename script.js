@@ -1,7 +1,3 @@
-// =======================
-// LEAFLET MAP
-// =======================
-
 var map = L.map('map').setView([51.0447, -114.0719], 13);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
@@ -10,18 +6,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
 
 var marker = L.marker([51.0447,-114.0719]).addTo(map);
 
-
-// =======================
-// MQTT VARIABLES
-// =======================
-
 var client;
 var connected = false;
-
-
-// =======================
-// START BUTTON
-// =======================
 
 document.getElementById("startBtn").onclick = function(){
 
@@ -47,11 +33,6 @@ document.getElementById("startBtn").onclick = function(){
 
 };
 
-
-// =======================
-// WHEN CONNECTED
-// =======================
-
 function onConnect(){
 
     connected = true;
@@ -70,11 +51,6 @@ function onConnect(){
 
 }
 
-
-// =======================
-// CONNECTION LOST
-// =======================
-
 function onConnectionLost(responseObject){
 
     if(responseObject.errorCode !== 0){
@@ -90,11 +66,6 @@ function onConnectionLost(responseObject){
     }
 
 }
-
-
-// =======================
-// PUBLISH BUTTON
-// =======================
 
 document.getElementById("publishBtn").onclick = function(){
 
@@ -114,11 +85,6 @@ document.getElementById("publishBtn").onclick = function(){
     console.log("Message published: " + messageText);
 
 };
-
-
-// =======================
-// SHARE MY STATUS
-// =======================
 
 document.getElementById("shareBtn").onclick = function(){
 
@@ -158,11 +124,6 @@ document.getElementById("shareBtn").onclick = function(){
     });
 
 };
-
-
-// =======================
-// MESSAGE RECEIVED
-// =======================
 
 function onMessageArrived(message){
 
@@ -212,11 +173,6 @@ function onMessageArrived(message){
     }
 
 }
-
-
-// =======================
-// END BUTTON
-// =======================
 
 document.getElementById("endBtn").onclick = function(){
 
